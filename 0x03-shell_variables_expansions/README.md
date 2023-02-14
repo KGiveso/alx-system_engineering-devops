@@ -1,1 +1,1 @@
-I will be writing all commands in Shell, init files, variables and expansions
+I am writing my first Shell_variables_expansion scripts
