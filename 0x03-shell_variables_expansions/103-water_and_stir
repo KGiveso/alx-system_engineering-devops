@@ -1,0 +1,5 @@
+#!/bin/bash
+water=$(echo $WATER | tr 'water' '01234')
+stir=$(echo $STIR | tr 'stir.' '01234')
+result=$((5#$water + 5#$stir))
+echo $(echo $result | tr '01234' 'bestchol')
