@@ -10,6 +10,6 @@ frontend http_front
   default_backend http_back
 backend http_back
    balance roundrobin
-   server 4476-web-01 54.167.24.215:80 check
-   server 4476-web-02 54.82.159.235:80 check" >> /etc/haproxy/haproxy.cfg
+   server 272407-web-01 54.167.24.215:80 check
+   server 272407-web-02 54.82.159.235:80 check" >> /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
