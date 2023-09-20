@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
-# Update system packages
+# Install Nginx web server
 sudo apt-get update -y
-
-# Install Nginx
 sudo apt-get install nginx -y
+echo "Hello World!" > /var/www/html/index.html
 
-# Configure Nginx default page
-echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html > /dev/null
+# Configure Nginx to return "Hello World!" for root path
+sudo sed -i 's|root /var/www/html;|root /var/www/html;\n\tlocation = / {\n\t\treturn 200 "Hello World!";\n\t}|' /etc/nginx/sites-available/default
 
-# Start Nginx service
-sudo service nginx start
+# Restart Nginx to apply the changes
+sudo service nginx restart
