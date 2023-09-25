@@ -42,4 +42,3 @@ if __name__ == "__main__":
             TASK_TITLE = todo.get('title')
             if todo.get("completed"):
                 print("\t {}".format(TASK_TITLE))
-
