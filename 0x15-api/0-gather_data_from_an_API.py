@@ -8,7 +8,11 @@ if __name__ == "__main__":
     try:
         id = argv[1]
         is_int = int(id)
-    except:
+    except IndexError:
+        print("No ID provided")
+        exit()
+    except ValueError:
+        print("Invalid ID provided")
         exit()
 
     url_user = "https://jsonplaceholder.typicode.com/users?id=" + id
@@ -38,3 +42,4 @@ if __name__ == "__main__":
             TASK_TITLE = todo.get('title')
             if todo.get("completed"):
                 print("\t {}".format(TASK_TITLE))
+
