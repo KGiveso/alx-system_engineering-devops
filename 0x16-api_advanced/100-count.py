@@ -39,11 +39,11 @@ def count_words(subreddit, word_list, after="", word_dic={}):
     try:
         js = r.json()
 
-    except ValueError:
+    except ValueError as e:
+        print("Error parsing JSON response:", e)
         return None
 
     try:
-
         data = js.get("data")
         after = data.get("after")
         children = data.get("children")
@@ -55,7 +55,8 @@ def count_words(subreddit, word_list, after="", word_dic={}):
             for w in word_list:
                 word_dic[w] += lower.count(w.lower())
 
-    except:
+    except Exception as e:
+        print("Error processing data:", e)
         return None
 
     count_words(subreddit, word_list, after, word_dic)
