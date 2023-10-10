@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Top ten """
 
+
 def top_ten(subreddit):
     """
     Prints the titles of the first 10 hot posts listed for a given subreddit
